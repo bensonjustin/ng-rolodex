@@ -1,0 +1,15 @@
+.navigation {
+  margin: 0;
+  padding: 15px;
+  background-color: lighten(blue, 25%);
+}
+li {
+  display: inline-block;
+  margin-right: 25px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+  }
+}

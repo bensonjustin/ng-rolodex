@@ -1,0 +1,26 @@
+<div class="header-container">
+  <div class="header-left">
+    <ul class="navigation">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="header-right">
+    <div class="logged-out" *ngIf="!user.loggedIn">
+      <button (click)="login()">
+        Login
+      </button>
+    </div>
+    <div class="logged-in" *ngIf="isLoggedIn()">
+      Welcome, {{user.username}}
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
