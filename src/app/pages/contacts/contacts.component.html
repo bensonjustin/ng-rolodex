@@ -1,0 +1,83 @@
+<h1>
+  Contacts Page
+</h1>
+
+<form>
+  <div class="input-group">
+    <label for="name">
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="formData.name"
+        (keyup)="validateName()"
+        (blur)="validateName()"
+        #name="ngModel"
+        #nameInput
+      />
+      <div class="error" *ngIf="errors.name && name.touched">
+        {{ errors.name }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    <label for="address">
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="formData.name"
+        (keyup)="validateAddress()"
+        (blur)="validateAddress()"
+        #address="ngModel"
+        #nameInput
+      />
+      <div class="error" *ngIf="errors.address && address.touched">
+        {{ errors.address }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    <label for="mobile">
+      <input
+        type="text"
+        name="mobile"
+        [(ngModel)]="formData.mobile"
+        (keyup)="validateMobile()"
+        (blur)="validateMobile()"
+        #mobile="ngModel"
+        #nameInput
+      />
+      <div class="error" *ngIf="errors.mobile && mobile.touched">
+        {{ errors.mobile }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    <label for="email">
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="formData.email"
+        (keyup)="validateEmail()"
+        (blur)="validateEmail()"
+        #email="ngModel"
+      />
+      <div class="error" *ngIf="errors.email && email.touched">
+        {{ errors.email }}
+      </div>
+    </label>
+  </div>
+
+  <button class="btn" [disabled]="!nameValid || !emailValid" (click)="submit()">
+    Submit
+  </button>
+</form>
+
+{{ formData.name }}
+<br />
+{{ formData.email }}
+<br />
+{{ 'touched: ' + email.touched }} {{ 'untouched: ' + email.untouched }} {{
+'pristine: ' + email.pristine }} {{ 'dirty: ' + email.dirty }}

@@ -1,18 +1,26 @@
 <div class="header-container">
   <div class="header-left">
+    <h1>ROLODEX</h1>
+  </div>
+  <div class="header-right">
     <ul class="navigation">
       <li>
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/about">About</a>
+        <a href="/contacts">View All Contacts</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <div class="create-contact">
+          <button (click)="create()">
+            Create Contact
+          </button>
+        </div>
+      </li>
+      <li>
+        <a href="/profile">My Profile</a>
       </li>
     </ul>
-  </div>
-  <div class="header-right">
     <div class="logged-out" *ngIf="!user.loggedIn">
       <button (click)="login()">
         Login

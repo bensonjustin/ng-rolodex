@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const api = require('./routes/api');
 const decorator = require('../database/decorator');
+const contactsRoute = api.contactsRoute;
 const cors = require('cors');
 
 // data vars
@@ -31,20 +32,18 @@ app.use(bodyParser.json({ extended: true }));
 app.use(decorator);
 
 // routes
-app.post('/api/contact', (req, res) => {
-  const { body } = req;
+// app.post('/api/contact', (req, res) => {
+//   const { body } = req;
 
-  console.log(body);
+//   console.log(body);
 
-  res.json({
-    success: 200
-  });
-});
-// app.use('/api', userRoutes);
-// app.get('/api/smoke', (req, res) => {
-//   res.json({ smoke: 'test' });
+//   res.json({
+//     success: 200
+//   });
 // });
-app.use('/api', api);
+
+app.use('/api/contacts', contactsRoute);
+app.use('/api', api.router);
 
 // start server
 app.listen(PORT, () => {

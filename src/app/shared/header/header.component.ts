@@ -27,6 +27,10 @@ export class HeaderComponent {
     return this.router.navigate(['/login']);
   };
 
+  create = () => {
+    return this.router.navigate(['/create']);
+  };
+
   logout = () => {
     this.auth.logout();
   };

@@ -1,7 +1,20 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: lighten(blue, 25%);
+}
+.header-left {
+  color: white;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
 .navigation {
   margin: 0;
   padding: 15px;
-  background-color: lighten(blue, 25%);
 }
 li {
   display: inline-block;
